@@ -1,0 +1,46 @@
+<template>
+    <div class="modal">
+        <div class="modal__caption">
+            <div class="flex justify-end">
+              <i  class="material-icons flex justify-end btnClose">close</i>
+            </div>
+            <slot></slot>
+        </div>    
+    </div>
+</template>
+<script>
+export default {
+    name:"modal"
+}
+</script>
+<style lang="scss" scoped>
+    .modal{
+    background-color: rgba(0,0,0,.1);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity: 0;
+    visibility: hidden;
+    z-index:99;
+    transition: all .2s ease-in;
+    //pointer-events:none;
+    &__caption{
+        text-align:center;
+        border-radius:6px;
+        box-shadow: 1px 1px 4px rgba(59, 59, 59, 0.363);
+        padding: .8em;
+        background-color: rgb(252, 252, 252);
+        width: 400px;
+        margin: 10% auto 0;
+    }
+    
+    &.modal--show{
+        visibility:visible;
+        opacity: 1;
+        
+    }
+}
+
+</style>
